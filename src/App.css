@@ -1,0 +1,425 @@
+/* =========================
+   GLOBAL & THEME
+========================= */
+:root {
+  --primary: #4f46e5;
+  --secondary: #22d3ee;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #facc15;
+  --bg-main: #0f172a;
+  --bg-soft: #111827;
+  --glass: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.18);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #1e3a8a, #9333ea, #06b6d4);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+/* DASHBOARD BACKGROUND */
+.dashboard-bg {
+  min-height: 100vh;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #1f2937, #374151, #1f2937); /* Darker modern admin theme */
+}
+/* ======================================
+   ADMIN DASHBOARD – SAME AS USER DASHBOARD
+====================================== */
+.admin-dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #9333ea, #06b6d4);
+  padding: 40px 16px;
+}
+
+
+
+.dashboard-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-right button {
+  background: linear-gradient(135deg, var(--danger), #b91c1c);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.header-right button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EVENT FORM
+========================= */
+.event-form {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-form h2 {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.event-form input,
+.event-form select,
+.event-form textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+.event-form input:focus,
+.event-form select:focus,
+.event-form textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.25);
+}
+
+.event-form button {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 10px 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.event-form button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EVENT CARD
+========================= */
+.card {
+  padding: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.event-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+
+.event-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.event-description {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.event-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #facc15, #eab308);
+  color: #020617;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EVENT GRID
+========================= */
+.event-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.event-form {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1); /* slightly lighter glass for visibility */
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  color: white;
+}
+
+.event-form h2 {
+  margin-bottom: 16px;
+  color: white; /* Ensure heading is visible */
+}
+
+.event-form input,
+.event-form select,
+.event-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3); /* darker background for readability */
+  color: white; /* text visible */
+}
+
+.event-form select option {
+  color: black; /* makes dropdown options visible */
+}
+
+.event-form button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #22d3ee);
+}
+
+.event-form button:hover {
+  opacity: 0.9;
+}
+.admin-dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #9333ea, #06b6d4);
+  padding: 20px;
+  color: white; /* text visible */
+}
+
+/* Navbar same as admin */
+.nav {
+  margin: 0 16px 20px;
+  padding: 16px 24px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav button {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav button:hover {
+  opacity: 0.9;
+}
+.analytics-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.analytics-card {
+  flex: 1;
+  min-width: 150px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  transition: 0.3s;
+}
+
+.analytics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.analytics-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--secondary);
+}
+
+.analytics-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.analytics-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+.analytics-counts {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.count-card {
+  background: rgba(34,211,238,0.15);
+  padding: 16px 24px;
+  border-radius: 14px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.count-card h3 {
+  color: #e5e7eb;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.count-card p {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.analytics-graph {
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  margin: 0 auto; /* center horizontally */
+}
+
+.login-error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
